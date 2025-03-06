@@ -212,3 +212,77 @@ const names = books
   
   console.log(names);
   
+
+  // Counter - Closures
+
+const makeCounter = (initialCount) => {
+  let currentCount = initialCount;
+  
+  const getCurrentCount = () => {
+    return currentCount;
+  }
+
+  const increaseCount = () => {
+    currentCount += 1;
+    return currentCount
+  }
+
+  const decreaseCount = () => {
+    currentCount -= 1;
+    return currentCount
+  }
+
+  return {getCurrentCount, increaseCount, decreaseCount}
+}
+  
+const counter = makeCounter(2)
+console.log(counter.increaseCount());
+console.log(counter.getCurrentCount());
+console.log(counter.decreaseCount());
+console.log(counter.getCurrentCount());
+
+
+// Calculator - Classes
+
+class Calculator {
+  constructor(initialValue) {
+    this.initialValue = initialValue;
+
+  }
+
+  get currentValue() {
+    return this.initialValue;
+  }
+
+  set currentValue(newValue) {
+     this.initialValue = newValue
+  }
+
+  add(addingValue) {
+    return this.initialValue += addingValue;
+  }
+  subtract(subtractionValue) {
+    return this.initialValue -= subtractionValue
+  }
+  multiply(multiplyingValue) {
+    return this.initialValue *= multiplyingValue
+  }
+  divide(dividingValue) {
+    return this.initialValue /= dividingValue;
+  }
+} 
+
+const myCalculator = new Calculator(2)
+console.log(myCalculator.add(2));
+console.log(myCalculator.subtract(3));
+console.log(myCalculator.currentValue = 5);
+console.log(myCalculator.multiply(5));
+console.log(myCalculator.currentValue);
+
+
+
+
+
+
+
+
