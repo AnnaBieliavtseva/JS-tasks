@@ -58,7 +58,7 @@ function getEvenNumbers(start, end) {
   return arr
 }
 
-console.log(getEvenNumbers(3, 11));
+// console.log(getEvenNumbers(3, 11));
 
 const apartment = {
   imgUrl: "https://via.placeholder.com/640x480",
@@ -80,51 +80,135 @@ const numberOfTags = apartment.tags.length;
 const firstTag = apartment.tags[0];
 const lastTag = apartment.tags[apartment.tags.length-1];
 
-console.log(lastTag);
+// console.log(lastTag);
 
 
-function getProductPrice(productName) {
-  const products = [
-    { name: "Radar", price: 1300, quantity: 4 },
-    { name: "Scanner", price: 2700, quantity: 3 },
-    { name: "Droid", price: 400, quantity: 7 },
-    { name: "Grip", price: 1200, quantity: 9 },
-  ];
-  for (const product of products) {
-    if (product.name === productName) {
-      return product.price
-    }
+// function getProductPrice(productName) {
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
+//   for (const product of products) {
+//     if (product.name === productName) {
+//       return product.price
+//     }
       
     
     
-  }
-  return null;
-}
+//   }
+//   return null;
+// }
 
-console.log(getProductPrice("GGGG"));
+// console.log(getProductPrice("GGGG"));
 
 
-function getAllPropValues(propName) {
-  const products = [
-    { name: "Radar", price: 1300, quantity: 4 },
-    { name: "Scanner", price: 2700, quantity: 3 },
-    { name: "Droid", price: 400, quantity: 7 },
-    { name: "Grip", price: 1200, quantity: 9 },
-  ];
-  const arr = [];
+// function getAllPropValues(propName) {
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
+//   const arr = [];
   
-  for (const product of products) {
-    const keys = Object.keys(product);
-    for (const key of keys) {
+//   for (const product of products) {
+//     const keys = Object.keys(product);
+//     for (const key of keys) {
        
-      if (propName === key) {
-        arr.push(product[propName]);
-      }
+//       if (propName === key) {
+//         arr.push(product[propName]);
+//       }
+//     }
+//   }
+//   return arr;
+// }
+
+
+// console.log(getAllPropValues('pr'));
+
+
+// function calculateTotalPrice(productName) {
+//   const products = [
+//     { name: 'Radar', price: 1300, quantity: 4 },
+//     { name: 'Scanner', price: 2700, quantity: 3 },
+//     { name: 'Droid', price: 400, quantity: 7 },
+//     { name: 'Grip', price: 1200, quantity: 9 },
+//   ];
+//   let result = 0;
+//   for (const product of products) {
+    
+    
+   
+//     if (product.name === productName) {
+//     return result = product.price * product.quantity;
+//       }
+    
+
+
+//   }
+//   return `Product ${productName} not found!`;
+// }
+
+// console.log(calculateTotalPrice('Gri'));
+
+// const atTheOldToad = {
+//   potions: [],
+//   getPotions() {
+//     return "List of all available potions"
+//   },
+//   addPotion(potionName) {
+//   return `Adding ${potionName}`
+//   }
+// }
+
+function changeEven(numbers, value) {
+  let arr = [];
+  let num = 0;
+  for (let i = 0; i < numbers.length; i += 1) {
+    if (numbers[i] % 2 === 0) {
+      num = numbers[i] + value;
+      arr.push(num);
+    } else {
+      arr.push(numbers[i]);
     }
   }
   return arr;
 }
 
+console.log(changeEven([2, 8, 3, 7, 4, 6], 10));
 
-console.log(getAllPropValues('pr'));
 
+const books = [
+  {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    rating: 8.38,
+  },
+  {
+    title: 'Beside Still Waters',
+    author: 'Robert Sheckley',
+    rating: 8.51,
+  },
+  {
+    title: 'The Dream of a Ridiculous Man',
+    author: 'Fyodor Dostoevsky',
+    rating: 7.75,
+  },
+  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+  {
+    title: 'The Dreams in the Witch House',
+    author: 'Howard Lovecraft',
+    rating: 8.67,
+  },
+];
+const MIN_BOOK_RATING = 8;
+
+const names = books
+  .filter(book => book.rating >= MIN_BOOK_RATING)
+  .map(book => book.author)
+  .toSorted((a, b) => a.localeCompare(b));
+  
+  console.log(names);
+  
